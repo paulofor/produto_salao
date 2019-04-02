@@ -1,3 +1,28 @@
+(02-04-2019)
+
+Telas Concluidas:
+
+
+Cliente:
+
+.cliente agendamento
+.cliente agendamento2
+
+
+Profissional:
+. agenda profissional
+. estatistica profissional
+
+
+
+Salão:
+. estatistica salão ( agendamento ) --> EstatisticaSalao
+. estatistica salão ( serviço ) --> EstatisticaSalaoServico
+
+
+
+
+
 (26-03-2019)
 
 Fazer o gráfico do salão ( tela de estatisticas )

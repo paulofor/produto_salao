@@ -10,8 +10,8 @@ import { AgendaProfissionalPage } from '../pages/agenda-profissional/agenda-prof
 import { ResumoAtendimentoPage } from '../pages/resumo-atendimento/resumo-atendimento';
 import { EstatisticaProfissionalPage } from '../pages/estatistica-profissional/estatistica-profissional';
 import { EstatisticaSalaoPage } from '../pages/estatistica-salao/estatistica-salao';
-import { EscolheServicoProfissionalPage } from '../pages/escolhe-servico-profissional/escolhe-servico-profissional';
 import { ClienteAgendamento2Page } from '../pages/cliente-agendamento2/cliente-agendamento2';
+import { EstatisticaSalaoServicoPage } from '../pages/estatistica-salao-servico/estatistica-salao-servico';
 
 
 @Component({
@@ -40,7 +40,7 @@ export class MyApp {
 	
       { title: 'EstatisticaSalao' , component: EstatisticaSalaoPage},
 	
-      { title: 'EscolheServicoProfissional' , component: EscolheServicoProfissionalPage},
+      { title: 'EstatisticaSalaoServico' , component: EstatisticaSalaoServicoPage},
 	
       { title: 'ClienteAgendamento2' , component: ClienteAgendamento2Page},
 	

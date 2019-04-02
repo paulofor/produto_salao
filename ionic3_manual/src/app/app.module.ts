@@ -13,7 +13,6 @@ import { AgendaProfissionalPage } from '../pages/agenda-profissional/agenda-prof
 import { ResumoAtendimentoPage } from '../pages/resumo-atendimento/resumo-atendimento';
 import { EstatisticaProfissionalPage } from '../pages/estatistica-profissional/estatistica-profissional';
 import { EstatisticaSalaoPage } from '../pages/estatistica-salao/estatistica-salao';
-import { EscolheServicoProfissionalPage } from '../pages/escolhe-servico-profissional/escolhe-servico-profissional';
 import { ClienteAgendamento2Page } from '../pages/cliente-agendamento2/cliente-agendamento2';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,6 +25,7 @@ import { HorarioAtendimentoApi } from '../shared/sdk';
 import { SalaoApi } from '../shared/sdk';
 import { AtendimentoApi } from '../shared/sdk';
 import { ChartsModule } from 'ng2-charts';
+import { EstatisticaSalaoServicoPage } from '../pages/estatistica-salao-servico/estatistica-salao-servico';
 
 @NgModule({
   declarations: [
@@ -40,9 +40,9 @@ import { ChartsModule } from 'ng2-charts';
     EstatisticaProfissionalPage,
 	
     EstatisticaSalaoPage,
-	
-    EscolheServicoProfissionalPage,
-	
+  
+    EstatisticaSalaoServicoPage,
+   
     ClienteAgendamento2Page,
 	
   ],
@@ -68,7 +68,7 @@ import { ChartsModule } from 'ng2-charts';
 	
     EstatisticaSalaoPage,
 	
-    EscolheServicoProfissionalPage,
+    EstatisticaSalaoServicoPage,
 	
     ClienteAgendamento2Page,
 	

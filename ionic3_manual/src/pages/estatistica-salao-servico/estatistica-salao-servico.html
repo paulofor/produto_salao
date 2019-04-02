@@ -1,0 +1,75 @@
+
+
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title (click)="testaFoto()">Atendimentos - Serviços</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="quadroBase">
+
+
+    <ion-grid class="tabela">
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Serviço</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Dez</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Jan</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Fev</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Mar</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Corte</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">519</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">359</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">378</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">272</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Escova</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">369</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">325</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">205</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">261</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Manicure</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">205</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">213</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">281</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">329</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Pedicure</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">164</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">146</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">130</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">159</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Maquiagem</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">109</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">79</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">86</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">113</ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <br>
+    <br>
+    <ion-grid>
+      <ion-row >
+        <ion-col id="item">
+              <canvas id="cv01" baseChart height="250" 
+              [datasets]="barChartData" 
+              [labels]="barChartLabels" 
+              [options]="barChartOptions" 
+              [legend]="barChartLegend"
+              [chartType]="barChartType" ></canvas>
+              <img id="img1" height="250"  />
+              
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+  </ion-content>
