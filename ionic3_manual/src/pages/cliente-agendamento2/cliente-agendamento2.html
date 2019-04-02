@@ -1,0 +1,44 @@
+
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title (click)="testaFoto()">Agendamento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="quadroBase">
+    <p>Data: 20/03/2019</p>
+    <p>Serviço: Escova</p>
+    <p>Profissional: Regina</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          Escolha seu horário
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+          <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        </ion-col>
+        <ion-col col-9>12:00</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-3>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            </ion-col>
+        <ion-col col-9>12:30</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-3>
+              <ion-checkbox color="dark" checked="true"></ion-checkbox>
+            </ion-col>
+        <ion-col col-9>13:00</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-3>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            </ion-col>
+        <ion-col col-9>13:30</ion-col>
+      </ion-row>
+    </ion-grid>
+    <button ion-button block>Confirmar</button>
+</ion-content>

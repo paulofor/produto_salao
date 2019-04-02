@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title (click)="testaFoto()">Agendamento</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--São campos de um form do objeto agendamento -->
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="logForm(form)" novalidate>
+    <ion-item>
+      <ion-label floating>Data</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Serviço</ion-label>
+      <ion-select>
+        <ion-option value="1">Corte</ion-option>
+        <ion-option value="2">Escova</ion-option>
+        <ion-option value="3">Manicure</ion-option>
+        <ion-option value="4">Pedicure</ion-option>
+        <ion-option value="5">Maquiagem</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Profissional</ion-label>
+      <ion-select>
+        <ion-option value="1">Sandra</ion-option>
+        <ion-option value="2">Regina</ion-option>
+        <ion-option value="3">Lê</ion-option>
+        <ion-option value="4">Rita</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" block>Selecionar</button>
+  </form>
+</ion-content>

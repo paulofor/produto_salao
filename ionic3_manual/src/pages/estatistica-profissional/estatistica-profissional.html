@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title (click)="testaFoto()">02/2019 - Regina</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="quadroBase">
+
+
+  <ion-grid class="tabela">
+    <ion-row>
+      <ion-col col-12 class="separaLinha">Fevereiro - 2019</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 class="linhaTitulo separaLinha">Agendamentos</ion-col>
+      <ion-col col-4 class="separaLinha">352</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 class="linhaTitulo separaLinha">Faltas</ion-col>
+      <ion-col col-4 class="separaLinha">48</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 class="linhaTitulo separaLinha">Concluídos</ion-col>
+      <ion-col col-4 class="separaLinha">207</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 class="linhaTitulo separaLinha">Livre</ion-col>
+      <ion-col col-4 class="separaLinha">97</ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col id="item">
+        <canvas id="cv01" baseChart height="250" 
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [legend]="pieChartLegend">
+        </canvas>
+        <img id="img1" height="250"  />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,68 @@
+
+
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title (click)="testaFoto()">Total Atendimentos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="quadroBase">
+
+
+    <ion-grid class="tabela">
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Serviço</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Dez</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Jan</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Fev</ion-col>
+        <ion-col col-2 class="linhaTitulo separaLinha" style="text-align: center">Mar</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Agendamentos</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">2100</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1840</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1520</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1920</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Concluídos</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1365</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1122</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1081</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">1133</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Faltas</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">315</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">294</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">244</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">442</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 class="linhaTitulo separaLinha">Livre</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">420</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">423</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">198</ion-col>
+        <ion-col col-2 class="separaLinha" style="text-align: center">346</ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <br>
+    <br>
+    <ion-grid>
+      <ion-row >
+        <ion-col id="item">
+              <canvas id="cv01" baseChart height="250" 
+              [datasets]="barChartData" 
+              [labels]="barChartLabels" 
+              [options]="barChartOptions" 
+              [legend]="barChartLegend"
+              [chartType]="barChartType" ></canvas>
+              <img id="img1" height="250"  />
+              
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+  </ion-content>
