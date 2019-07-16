@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RespostaVersao, Visitante, RespostaVersaoApi, VisitanteApi } from '../../app/shared/sdk';
+import { RespostaVersaoApi, VisitanteApi, RespostaVersao, Visitante } from '../../app/shared/sdk';
 import { CookieService } from 'ngx-cookie-service';
-
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the PerguntaInicialPage page.
  *
@@ -17,7 +17,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class PerguntaInicialPage {
 
-  ID_VERSAOAPP = 1;
+
+  ID_VERSAOAPP = 99;
 
   exibeQuadro1: boolean = true;
   exibeQuadro2: boolean = false;
@@ -25,8 +26,6 @@ export class PerguntaInicialPage {
   resposta1: RespostaVersao = new RespostaVersao();
   resposta2: RespostaVersao = new RespostaVersao();
 
-  textoPergunta1 = 'Você trabalha com revenda de cosméticos atualmente ?';
-  textoPergunta2 = 'Tem interesse em revender ?';
 
   cookieValue = 'UNKNOWN';
   visitanteCorrente: Visitante = null;
@@ -37,66 +36,14 @@ export class PerguntaInicialPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PerguntaRevendaPage');
-    this.resposta1.pergunta = this.textoPergunta1;
-    this.resposta2.pergunta = this.textoPergunta2;
+    console.log('ionViewDidLoad PerguntaInicialPage');
+    this.resposta1.pergunta = 'Você é administrador de Salão de Beleza ?';
+    this.resposta2.pergunta = 'Ola2';
     this.resposta1.versaoAppId = this.ID_VERSAOAPP;
     this.resposta2.versaoAppId = this.ID_VERSAOAPP;
-    this.trataCookie();
   }
 
-  respostaSim1() {
-    console.log('Resposta Sim 1');
-    this.resposta1.resposta = 'sim';
-    this.resposta1.visitanteId = this.visitanteCorrente.id;
-    this.srv.create(this.resposta1)
-      .subscribe((result) => {
-        console.log('RespostaSim1: ', result);
-      });
-    this.mudaTela();
-  }
-
-  respostaNao1() {
-    console.log('Resposta Não 1');
-    this.resposta1.resposta = 'nao';
-    this.resposta1.visitanteId = this.visitanteCorrente.id;
-    this.srv.create(this.resposta1)
-      .subscribe((result) => {
-        console.log('RespostaSim1: ', result);
-      });
-    this.exibeQuadro2 = true;
-  }
-
-  respostaSim2() {
-    console.log('Resposta Sim 2');
-    this.resposta2.resposta = 'sim';
-    this.resposta2.visitanteId = this.visitanteCorrente.id;
-    this.srv.create(this.resposta2)
-      .subscribe((result) => {
-        console.log('RespostaSim2: ', result);
-      });
-    this.mudaTela();
-  }
-
-  respostaNao2() {
-    console.log('Resposta Não 2');
-    this.resposta2.resposta = 'nao';
-    this.resposta2.visitanteId = this.visitanteCorrente.id;
-    this.srv.create(this.resposta2)
-      .subscribe((result) => {
-        console.log('RespostaSim2: ', result);
-      });
-    this.mudaTela();
-  }
-
-  mudaTela() {
-    this.storage.set("user",this.visitanteCorrente).then((successData)=>{
-      this.navCtrl.push(ListaMarcasPage, {
-      })
-    })
-  }
-
-  
+    
   trataCookie() {
     this.cookieValue = this.cookieService.get('idDigicom');
     console.log('Cookie: ', this.cookieValue);
@@ -115,6 +62,7 @@ export class PerguntaInicialPage {
     }
   }
 
+
   registraVisita() {
     let visita = new Visitante();
     visita.codigoCookie = this.cookieValue;
@@ -130,4 +78,25 @@ export class PerguntaInicialPage {
 
 
 
+  respostaSim1() {
+    console.log('Resposta Sim 1');
+    //this.resposta1.resposta = 'sim';
+    //this.resposta1.visitanteId = this.visitanteCorrente.id;
+    //this.srv.create(this.resposta1)
+    //  .subscribe((result) => {
+    //    console.log('RespostaSim1: ', result);
+    //  });
+    //this.mudaTela();
+  }
+
+  respostaNao1() {
+    console.log('Resposta Não 1');
+    //this.resposta1.resposta = 'nao';
+    //this.resposta1.visitanteId = this.visitanteCorrente.id;
+    //this.srv.create(this.resposta1)
+    //  .subscribe((result) => {
+    //    console.log('RespostaSim1: ', result);
+    //  });
+    //this.exibeQuadro2 = true;
+  }
 }
