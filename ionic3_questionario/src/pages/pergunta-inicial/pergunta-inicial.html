@@ -1,13 +1,26 @@
 <ion-content>
 
+  <div id="logo">
+    <img width="100%" heigth="100%" src="assets/imgs/salao-app.jpg" />
+  </div>
 
-  <ion-card >
+
+  <ion-card *ngIf="exibePergunta1">
     <ion-card-content>
       <p>{{resposta1.pergunta}}</p>
     </ion-card-content>
-
+    <button ion-button clear item-bottom (click)="respostaSim1()">Sim</button>
+    <button ion-button clear item-bottom (click)="respostaNao1()">Não</button>
   </ion-card>
 
+
+  <ion-card *ngIf="exibePergunta2">
+    <ion-card-content>
+      <p>{{resposta2.pergunta}}</p>
+    </ion-card-content>
+    <button ion-button clear item-bottom (click)="respostaSim2()">Sim</button>
+    <button ion-button clear item-bottom (click)="respostaNao2()">Não</button>
+  </ion-card>
 
 
 </ion-content>
