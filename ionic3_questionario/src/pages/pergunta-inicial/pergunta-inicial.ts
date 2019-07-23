@@ -18,7 +18,7 @@ import { Storage } from '@ionic/storage';
 export class PerguntaInicialPage {
 
 
-  ID_VERSAOAPP = 99;
+  ID_VERSAOAPP = 2;
 
   exibePergunta1: boolean = true;
   exibePergunta2: boolean = false;
@@ -31,7 +31,7 @@ export class PerguntaInicialPage {
   cookieValue = 'UNKNOWN';
   visitanteCorrente: Visitante = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private srv: RespostaVersaoApi, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private srv: RespostaVersaoApi,
     private cookieService: CookieService,
     private visitanteSrv: VisitanteApi, protected storage: Storage) {
   }
@@ -39,13 +39,13 @@ export class PerguntaInicialPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerguntaInicialPage');
     this.resposta1.pergunta = 'Você é administrador de Salão de Beleza ?';
-    this.resposta2.pergunta = 'Gostaria de ter um aplicativo para seus clientes reservarem horários de serviços ?';
+    this.resposta2.pergunta = 'Gostaria de ter um aplicativo para seus clientes reservarem horários no seu salão ?';
     this.resposta1.versaoAppId = this.ID_VERSAOAPP;
     this.resposta2.versaoAppId = this.ID_VERSAOAPP;
     this.trataCookie();
   }
 
-    
+
   trataCookie() {
     this.cookieValue = this.cookieService.get('idDigicom');
     console.log('Cookie: ', this.cookieValue);
@@ -99,6 +99,7 @@ export class PerguntaInicialPage {
         console.log('RespostaSim1: ', result);
       });
     this.exibeAgradecimento = true;
+    this.exibePergunta1 = false;
   }
 
 
@@ -110,17 +111,21 @@ export class PerguntaInicialPage {
       .subscribe((result) => {
         console.log('RespostaSim1: ', result);
       });
-    //this.mudaTela();
+    this.exibePergunta1 = false;
+    this.exibePergunta2 = false;
+    this.exibeAgradecimento = true;
   }
 
   respostaNao2() {
     console.log('Resposta Não 2');
-    //this.resposta1.resposta = 'nao';
-    //this.resposta1.visitanteId = this.visitanteCorrente.id;
-    //this.srv.create(this.resposta1)
-    //  .subscribe((result) => {
-    //    console.log('RespostaSim1: ', result);
-    //  });
-    //this.exibeQuadro2 = true;
+    this.resposta2.resposta = 'nao';
+    this.resposta2.visitanteId = this.visitanteCorrente.id;
+    this.srv.create(this.resposta2)
+      .subscribe((result) => {
+        console.log('RespostaSim1: ', result);
+      });
+    this.exibePergunta1 = false;
+    this.exibePergunta2 = false;
+    this.exibeAgradecimento = true;
   }
 }
